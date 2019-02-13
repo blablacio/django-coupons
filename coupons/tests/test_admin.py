@@ -24,7 +24,7 @@ class CouponAdminTestCase(TestCase):
     def test_list_display(self):
         admin = CouponAdmin(Coupon, self.site)
 
-        self.assertEquals(
+        self.assertEqual(
             list(admin.get_fields(request)),
             ['value', 'code', 'type', 'user_limit', 'valid_until', 'campaign']
         )
