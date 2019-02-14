@@ -27,14 +27,18 @@ redeem_done = Signal(providing_args=["coupon"])
 
 
 class CouponManager(models.Manager):
-    def create_coupon(self, type, value, users=[], valid_until=None, prefix="", campaign=None, user_limit=None):
+    def create_coupon(self, type, value, users=[], valid_until=None, duration=None, duration_in_months=None,
+                      prefix="", campaign=None, user_limit=None):
         coupon = self.create(
             value=value,
             code=Coupon.generate_code(prefix),
             type=type,
             valid_until=valid_until,
+            duration_in_months=duration_in_months,
             campaign=campaign,
         )
+        if duration is not None:  # otherwise use default value of model
+            coupon.duration = duration
         if user_limit is not None:  # otherwise use default value of model
             coupon.user_limit = user_limit
         try:
@@ -49,10 +53,12 @@ class CouponManager(models.Manager):
                 CouponUser(user=user, coupon=coupon).save()
         return coupon
 
-    def create_coupons(self, quantity, type, value, valid_until=None, prefix="", campaign=None):
+    def create_coupons(self, quantity, type, value, valid_until=None, duration=None, duration_in_months=None,
+                       prefix="", campaign=None):
         coupons = []
         for i in range(quantity):
-            coupons.append(self.create_coupon(type, value, None, valid_until, prefix, campaign))
+            coupons.append(self.create_coupon(type, value, None, valid_until, duration, duration_in_months,
+                                              prefix, campaign))
         return coupons
 
     def used(self):
