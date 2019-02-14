@@ -13,7 +13,8 @@ class CouponGenerationForm(forms.Form):
         label=_("Valid until"), required=False,
         help_text=_("Leave empty for coupons that never expire")
     )
-    duration = forms.ChoiceField(label=_("Duration"), choices=COUPON_DURATIONS, initial=COUPON_DEFAULT_DURATION)
+    duration = forms.ChoiceField(label=_("Duration"), choices=COUPON_DURATIONS,
+                                 initial=COUPON_DEFAULT_DURATION, required=False)
     duration_in_months = forms.IntegerField(label=_("Duration in months"), required=False)
     prefix = forms.CharField(label="Prefix", required=False)
     campaign = forms.ModelChoiceField(
