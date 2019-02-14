@@ -20,9 +20,10 @@ class CouponUserInline(admin.TabularInline):
 
 class CouponAdmin(admin.ModelAdmin):
     list_display = [
-        'created_at', 'code', 'type', 'value', 'user_count', 'user_limit', 'is_redeemed', 'valid_until', 'campaign'
+        'created_at', 'code', 'type', 'value', 'user_count', 'user_limit', 'is_redeemed', 'valid_until',
+        'duration', 'duration_in_months', 'campaign'
     ]
-    list_filter = ['type', 'campaign', 'created_at', 'valid_until']
+    list_filter = ['type', 'campaign', 'created_at', 'valid_until', 'duration', 'duration_in_months']
     raw_id_fields = ()
     search_fields = ('code', 'value')
     inlines = (CouponUserInline,)
@@ -54,6 +55,8 @@ class GenerateCouponsAdminView(TemplateView):
                     form.cleaned_data['type'],
                     form.cleaned_data['value'],
                     form.cleaned_data['valid_until'],
+                    form.cleaned_data['duration'],
+                    form.cleaned_data['duration_in_months'],
                     form.cleaned_data['prefix'],
                     form.cleaned_data['campaign'],
                 )

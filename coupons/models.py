@@ -16,7 +16,7 @@ from .settings import (
     SEGMENTED_CODES,
     SEGMENT_LENGTH,
     SEGMENT_SEPARATOR,
-)
+    COUPON_DURATIONS, COUPON_DEFAULT_DURATION)
 
 
 try:
@@ -77,6 +77,11 @@ class Coupon(models.Model):
     valid_until = models.DateTimeField(
         _("Valid until"), blank=True, null=True,
         help_text=_("Leave empty for coupons that never expire"))
+    duration = models.CharField(_("Duration"), max_length=20, choices=COUPON_DURATIONS, default=COUPON_DEFAULT_DURATION,
+                                help_text=_("How long a user who applies this coupon will get the discount."))
+    duration_in_months = models.PositiveIntegerField(
+        _("Duration in months"), blank=True, null=True,
+        help_text=_("If duration is repeating, the number of months the coupon applies."))
     campaign = models.ForeignKey('Campaign', verbose_name=_("Campaign"), blank=True, null=True, related_name='coupons',
                                  on_delete=PROTECT)
 

@@ -26,5 +26,5 @@ class CouponAdminTestCase(TestCase):
 
         self.assertEqual(
             list(admin.get_fields(request)),
-            ['value', 'code', 'type', 'user_limit', 'valid_until', 'campaign']
+            ['value', 'code', 'type', 'user_limit', 'valid_until', 'duration', 'duration_in_months', 'campaign']
         )

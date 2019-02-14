@@ -2,7 +2,7 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from .models import Coupon, CouponUser, Campaign
-from .settings import COUPON_TYPES
+from .settings import COUPON_TYPES, COUPON_DURATIONS, COUPON_DEFAULT_DURATION
 
 
 class CouponGenerationForm(forms.Form):
@@ -13,6 +13,8 @@ class CouponGenerationForm(forms.Form):
         label=_("Valid until"), required=False,
         help_text=_("Leave empty for coupons that never expire")
     )
+    duration = forms.ChoiceField(label=_("Duration"), choices=COUPON_DURATIONS, initial=COUPON_DEFAULT_DURATION)
+    duration_in_months = forms.IntegerField(label=_("Duration in months"), required=False)
     prefix = forms.CharField(label="Prefix", required=False)
     campaign = forms.ModelChoiceField(
         label=_("Campaign"), queryset=Campaign.objects.all(), required=False
