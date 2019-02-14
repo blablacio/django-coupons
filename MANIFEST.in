@@ -1,5 +1,4 @@
 include LICENSE
 include README.md
-include coupons/templates/admin/coupons/coupon/change_list.html
-include coupons/templates/admin/generate_coupons.html
+recursive-include coupons/templates *
 recursive-include coupons/locale *
