@@ -1,4 +1,5 @@
 import random
+import decimal
 
 from django.conf import settings
 from django.db import IntegrityError
@@ -144,6 +145,13 @@ class Coupon(models.Model):
         coupon_user.redeemed_at = timezone.now()
         coupon_user.save()
         redeem_done.send(sender=self.__class__, coupon=self)
+
+    def get_discount(self, amount):
+        if self.type == 'monetary':
+            discount = self.value
+        elif self.type == 'percentage':
+            discount = (self.value / decimal.Decimal('100')) * amount
+        return discount
 
 
 @python_2_unicode_compatible
