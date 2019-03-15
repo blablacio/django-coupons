@@ -148,10 +148,11 @@ class Coupon(models.Model):
 
     def get_discount(self, amount):
         if self.type == 'monetary':
-            discount = self.value
+            return self.value
         elif self.type == 'percentage':
-            discount = (self.value / decimal.Decimal('100')) * amount
-        return discount
+            return (self.value / decimal.Decimal('100')) * amount
+        else:
+            raise NotImplementedError('Discount calculation not implemented for virtual currency')
 
 
 @python_2_unicode_compatible
