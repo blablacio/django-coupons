@@ -9,6 +9,14 @@ COUPON_TYPES = getattr(settings, 'COUPONS_COUPON_TYPES', (
     ('virtual_currency', 'Virtual currency'),
 ))
 
+COUPON_DURATIONS = getattr(settings, 'COUPONS_COUPON_DURATIONS', (
+    ('once', 'Once'),
+    ('forever', 'Forever'),
+    ('repeating', 'Repeating'),
+))
+
+COUPON_DEFAULT_DURATION = getattr(settings, 'COUPONS_COUPON_DEFAULT_DURATION', 'once')
+
 CODE_LENGTH = getattr(settings, 'COUPONS_CODE_LENGTH', 15)
 
 CODE_CHARS = getattr(settings, 'COUPONS_CODE_CHARS', string.ascii_letters+string.digits)
