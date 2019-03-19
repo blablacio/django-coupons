@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-19 14:35+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin.py:63
+msgid "Your coupons have been generated."
+msgstr "Sus cupones han sido generados."
+
+#: admin.py:79
+msgid "coupons"
+msgstr "cupones"
+
+#: admin.py:83
+msgid "used"
+msgstr "usado"
+
+#: admin.py:87
+msgid "unused"
+msgstr "no usado"
+
+#: admin.py:91
+msgid "expired"
+msgstr "caducado"
+
+#: forms.py:9
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: forms.py:10 models.py:77
+msgid "Value"
+msgstr "Valor"
+
+#: forms.py:11 models.py:81
+msgid "Type"
+msgstr "Tipo"
+
+#: forms.py:13 models.py:85
+msgid "Valid until"
+msgstr "Válido hasta"
+
+#: forms.py:14 models.py:86
+msgid "Leave empty for coupons that never expire"
+msgstr "Deje en blanco los cupones que nunca caducan."
+
+#: forms.py:16 models.py:87
+msgid "Duration"
+msgstr "Duración"
+
+#: forms.py:18 models.py:90
+msgid "Duration in months"
+msgstr "Duración en meses"
+
+#: forms.py:21 models.py:92 models.py:165
+msgid "Campaign"
+msgstr "Campaña"
+
+#: forms.py:26
+msgid "Coupon code"
+msgstr "Codigo de cupon"
+
+#: forms.py:44
+msgid "This code is not valid."
+msgstr "Este código no es válido."
+
+#: forms.py:51
+msgid ""
+"The server must provide an user to this form to allow you to use this code. "
+"Maybe you need to sign in?"
+msgstr "El servidor debe proporcionar un usuario a este formulario para permitirle usar este código. ¿Puede que necesite iniciar sesión?"
+
+#: forms.py:55 forms.py:67
+msgid "This code has already been used."
+msgstr "Este código ya ha sido usado."
+
+#: forms.py:60
+msgid "This code has already been used by your account."
+msgstr "Este código ya ha sido utilizado por su cuenta."
+
+#: forms.py:65
+msgid "This code is not valid for your account."
+msgstr "Este código no es válido para su cuenta."
+
+#: forms.py:69
+msgid "This code is not meant to be used here."
+msgstr "Este código no debe utilizarse aquí."
+
+#: forms.py:71
+msgid "This code is expired."
+msgstr "Este código ha caducado."
+
+#: models.py:77
+msgid "Arbitrary coupon value"
+msgstr "Valor de cupón arbitrario"
+
+#: models.py:79 templates/admin/generate_coupons.html:59
+msgid "Code"
+msgstr "Código"
+
+#: models.py:80
+msgid "Leaving this field empty will generate a random code."
+msgstr "Si deja este campo vacío, se generará un código aleatorio."
+
+#: models.py:82
+msgid "User limit"
+msgstr "Limite de usuario"
+
+#: models.py:83
+msgid "Created at"
+msgstr "Creado en"
+
+#: models.py:88
+msgid "How long a user who applies this coupon will get the discount."
+msgstr "Cuánto tiempo un usuario que aplica este cupón obtendrá el descuento."
+
+#: models.py:91
+msgid "If duration is repeating, the number of months the coupon applies."
+msgstr "Si la duración se repite, el numero de meses que se aplica el cupón."
+
+#: models.py:99
+msgid "Coupon"
+msgstr "Cupón"
+
+#: models.py:100 templates/admin/generate_coupons.html:36
+msgid "Coupons"
+msgstr "Cupones"
+
+#: models.py:160
+msgid "Name"
+msgstr "Nombre"
+
+#: models.py:161
+msgid "Description"
+msgstr "Descripción"
+
+#: models.py:166
+msgid "Campaigns"
+msgstr "Campañas"
+
+#: models.py:175
+msgid "User"
+msgstr "Usuario"
+
+#: models.py:176
+msgid "Redeemed at"
+msgstr "Redimido en"
+
+#: templates/admin/coupons/coupon/change_list.html:8
+#: templates/admin/generate_coupons.html:37
+#: templates/admin/generate_coupons.html:49
+msgid "Generate coupons"
+msgstr "Generar cupones"
+
