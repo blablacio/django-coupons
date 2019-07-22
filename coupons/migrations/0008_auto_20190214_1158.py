@@ -20,4 +20,9 @@ class Migration(migrations.Migration):
             name='duration_in_months',
             field=models.PositiveIntegerField(blank=True, help_text='If duration is repeating, the number of months the coupon applies.', null=True, verbose_name='Duration in months'),
         ),
+        migrations.AlterField(
+            model_name='coupon',
+            name='user_limit',
+            field=models.PositiveIntegerField(default=1, help_text='Set 0 for unlimited use', verbose_name='User limit'),
+        ),
     ]
