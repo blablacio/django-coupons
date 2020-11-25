@@ -11,6 +11,7 @@ from .models import Coupon, CouponUser, Campaign
 class CouponUserInline(admin.TabularInline):
     model = CouponUser
     extra = 0
+    autocomplete_fields = ['user']
 
     def get_max_num(self, request, obj=None, **kwargs):
         if obj:
